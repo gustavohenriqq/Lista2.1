@@ -1,0 +1,50 @@
+// 1. Escreva um programa que:
+• leia 100 fichas, onde cada ficha contém o número de matrícula e a nota de cada aluno de
+um determinado curso;
+• determine e imprima as duas maiores notas, juntamente com o número de matrícula do
+aluno que obteve cada uma delas;
+• assuma que não exista dois ou mais alunos com a mesma nota
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+
+        int numAlunos = 100;
+        int matricula1 = 0, matricula2 = 0;
+        double maiorNota = Double.NEGATIVE_INFINITY, segundaMaiorNota = Double.NEGATIVE_INFINITY;
+
+        for (int i = 0; i < numAlunos; i++) {
+            System.out.print("Digite o número de matrícula do aluno: ");
+            int matricula = scanner.nextInt();
+            
+            System.out.print("Digite a nota do aluno: ");
+            double nota = scanner.nextDouble();
+
+            if (nota > maiorNota) {
+                
+                segundaMaiorNota = maiorNota;
+                matricula2 = matricula1;
+                
+                
+                maiorNota = nota;
+                matricula1 = matricula;
+            } else if (nota > segundaMaiorNota) {
+                
+                segundaMaiorNota = nota;
+                matricula2 = matricula;
+            }
+        }
+
+        System.out.println("\nAluno com a maior nota:");
+        System.out.println("Matrícula: " + matricula1 + ", Nota: " + maiorNota);
+        
+        System.out.println("Aluno com a segunda maior nota:");
+        System.out.println("Matrícula: " + matricula2 + ", Nota: " + segundaMaiorNota);
+
+    
+  }
+}
+
+
