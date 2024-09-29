@@ -1,0 +1,37 @@
+// 2. Dada a seguinte série: 1, 4, 4, 2, 5, 5, 3, 6, 6, 4, 7, 7, . . ., escreva um programa que seja capaz de
+gerar os primeiros n−ésimos termos da mesma. Esse número n deve ser lido do teclado. No
+exemplo citado, n = 4
+
+import java.util.Scanner;
+class Atividade2 {
+  public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o número n (n-ésimo termo da série): ");
+        int n = scanner.nextInt();
+        
+        int valor = 1; 
+        int contador = 0; 
+
+        while (contador < n) {
+            
+            System.out.print(valor + " ");
+            contador++;
+            if (contador == n) break;
+
+            
+            System.out.print((valor + 3) + " ");
+            contador++;
+            if (contador == n) break;
+            
+            System.out.print((valor + 3) + " ");
+            contador++;
+            if (contador == n) break;
+
+            
+            valor++;
+        }
+    
+  }
+}
